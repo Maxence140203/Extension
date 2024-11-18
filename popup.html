@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncPlay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            width: 400px; /* Increased width */
+            height: 200px; /* Increased height */
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        #status {
+            text-align: center;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        #roomInfo {
+            text-align: center;
+            margin: 10px 0;
+        }
+        #roomCodeDisplay {
+            font-weight: bold;
+            background: #e9ecef;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        input {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SyncPlay</h1>
+    <div id="preRoomActions">
+        <button id="createRoom" class="button">Créer une salle</button>
+        <input id="roomCodeInput" placeholder="Code de salle">
+        <button id="joinRoom" class="button">Rejoindre une salle</button>
+    </div>
+
+    <div id="inRoomActions" class="hidden">
+        <div id="status">Status : <span id="connectionStatus">Non connecté</span></div>
+        <div id="roomInfo">
+            Code de la salle : <span id="roomCodeDisplay"></span>
+            <button id="copyRoomCode" class="button">Copier le code</button>
+        </div>
+        <button id="leaveRoom" class="button">Quitter la salle</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
